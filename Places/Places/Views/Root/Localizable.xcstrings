@@ -1,0 +1,61 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "presets.anonymous-location.title" : {
+      "comment" : "The name of a location on the presets screen that doesn't have a server-provided name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unnamed Location"
+          }
+        }
+      }
+    },
+    "presets.coordinate.format (latitude: %lf, longitude:  %lf)" : {
+      "comment" : "The format of a decimal coordinate displayed on the presets screen. This should really be part of a FormatStyle, but this is part of a one-off code challenge",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lf, %2$lf"
+          }
+        }
+      }
+    },
+    "presets.not-available.title" : {
+      "comment" : "The message displayed when presets were successfully downloaded from the server, but none were provided",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No presets available"
+          }
+        }
+      }
+    },
+    "root.tab.custom-name" : {
+      "comment" : "The name of the tab where the user selects a custom location",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom"
+          }
+        }
+      }
+    },
+    "root.tab.presets-name" : {
+      "comment" : "The name of the tab where the user selects a preset location",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presets"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
