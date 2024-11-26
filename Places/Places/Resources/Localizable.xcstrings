@@ -1,6 +1,50 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "custom.open-wiki-button.title" : {
+      "comment" : "The title of the button the user presses to open the Wikipedia app to their custom location",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Wikipedia"
+          }
+        }
+      }
+    },
+    "custom.selection-pin.title" : {
+      "comment" : "The label for the pin that displays the user's custom location selection",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      }
+    },
+    "custom.text-field.latitude.title" : {
+      "comment" : "The label for the text field where the user enters the latitude of a custom location",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude"
+          }
+        }
+      }
+    },
+    "custom.text-field.longitude.title" : {
+      "comment" : "The label for the text field where the user enters the longitude of a custom location",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longitude"
+          }
+        }
+      }
+    },
     "presets.anonymous-location.title" : {
       "comment" : "The name of a location on the presets screen that doesn't have a server-provided name",
       "localizations" : {

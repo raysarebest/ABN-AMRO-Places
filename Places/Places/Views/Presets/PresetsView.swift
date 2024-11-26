@@ -24,7 +24,6 @@ struct PresetsView: View {
                 }
                 else {
                     List {
-                        RefreshDetector()
                         ForEach(Array(locations.lazy.enumerated()), id: \.offset) { _, location in
                             Link(destination: wikiURL(for: location)) {
                                 VStack(alignment: .leading) {
@@ -86,14 +85,6 @@ struct PresetsView: View {
         get {
             return "mappin.slash"
         }
-    }
-}
-
-struct RefreshDetector: View {
-    @Environment(\.refresh) private var refresh
-    
-    var body: some View {
-        Text("Has refresh action? \(refresh != nil ? "Yes" : "No")")
     }
 }
 
