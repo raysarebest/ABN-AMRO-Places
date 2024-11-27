@@ -12,13 +12,24 @@
         }
       }
     },
+    "custom.selection-pin.coordinate.title (latitude: %lf, longitude: %lf)" : {
+      "comment" : "A description of the coordinate for the accessibility system when the user highlights their selected pin",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude: %1$lf, Longitude: %2$lf"
+          }
+        }
+      }
+    },
     "custom.selection-pin.title" : {
       "comment" : "The label for the pin that displays the user's custom location selection",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selection"
+            "value" : "Selected Location"
           }
         }
       }
@@ -85,6 +96,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "An error has occurred"
+          }
+        }
+      }
+    },
+    "presets.location.accessibility.title (latitude: %lf, longitude: %lf)" : {
+      "comment" : "A description of the represented coordinate to the accessibility system",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latitude: %1$lf, Longitude: %2$lf"
           }
         }
       }

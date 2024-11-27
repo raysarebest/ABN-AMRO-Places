@@ -14,6 +14,8 @@ struct CustomLocationView: View {
     @State private var selectedLatitude: CLLocationDegrees? = nil
     @State private var selectedLongitude: CLLocationDegrees? = nil
     
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    
     private var selectedLocation: Location? {
         get throws {
             guard let latitude = selectedLatitude, let longitude = selectedLongitude else {
@@ -25,48 +27,53 @@ struct CustomLocationView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
+        VStack(spacing: 0) {
             MapReader { map in
                 Map(position: $camera) {
                     if let location = try? selectedLocation {
-                        Marker("custom.selection-pin.title", coordinate: location.coordinate)
+                        Marker(coordinate: location.coordinate) {
+                            Text("custom.selection-pin.title")
+                            Text("custom.selection-pin.coordinate.title (latitude: \(location.coordinate.latitude), longitude: \(location.coordinate.longitude))") // Not shown in the visual UI but read by the accessibility system to give more context than just the selection label
+                        }
+                        .mapItemDetailSelectionAccessory(nil)
                     }
                 }
-                .gesture(
-                    LongPressGesture()
-                        .sequenced(before: DragGesture(minimumDistance: 0).onEnded { drag in
-                            if let selection = map.convert(drag.startLocation, from: .local) {
-                                selectedLatitude = selection.latitude
-                                selectedLongitude = selection.longitude
-                            }
-                        })
-                )
+                .onTapGesture { position in
+                    guard let selection = map.convert(position, from: .local) else {
+                        return
+                    }
+                    
+                    withAnimation {
+                        selectedLatitude = selection.latitude
+                        selectedLongitude = selection.longitude
+                    }
+                }
             }
             
-            VStack {
+            let paddingInset: CGFloat = 8
+            
+            VStack(spacing: paddingInset) {
                 
                 if let location = try? selectedLocation {
                     Link("custom.open-wiki-button.title", destination: .wikipediaURL(at: location))
                         .buttonStyle(.borderedProminent)
-                        .transition(.scale(1, anchor: .bottom))
                 }
                 
-                LabeledContent(latitudeEntryTitle) {
-                    TextField(latitudeEntryTitle, value: $selectedLatitude.animation(), format: .number)
-                }
+                CoordinatePartEditor(title: latitudeEntryTitle, coordinatePart: $selectedLatitude)
                 
-                LabeledContent(longitudeEntryTitle) {
-                    TextField(longitudeEntryTitle, value: $selectedLongitude.animation(), format: .number)
-                }
+                CoordinatePartEditor(title: longitudeEntryTitle, coordinatePart: $selectedLongitude)
             }
+            .accessibilityAddTraits(.isSummaryElement)
+            .labeledContentStyle(.accessible)
             .textFieldStyle(.roundedBorder)
-            .padding()
+            .padding(paddingInset)
             .labeledContentStyle(.automatic)
-            .background(.ultraThickMaterial)
+            .transition(.blurReplace)
         }
         .onChange(of: try? selectedLocation) { _, newLocation in
             if let location = newLocation {
-                withAnimation {
+                
+                withAnimation(reduceMotion ? nil : .default) {
                     camera = .camera(MapCamera(centerCoordinate: location.coordinate, distance: 10_000))
                 }
             }

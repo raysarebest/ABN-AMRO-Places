@@ -29,7 +29,9 @@ struct PresetsListViewRow: View {
                     
                     Text("presets.coordinate.format (latitude: \(location.coordinate.latitude), longitude:  \(location.coordinate.longitude))")
                         .font(.caption)
+                        .accessibilityHidden(true)
                 }
+                .accessibilityValue(Text("presets.location.accessibility.title (latitude: \(location.coordinate.latitude), longitude: \(location.coordinate.longitude))"))
                 
                 Spacer()
                 
