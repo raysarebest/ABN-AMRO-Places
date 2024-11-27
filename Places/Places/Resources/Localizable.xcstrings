@@ -67,13 +67,35 @@
         }
       }
     },
-    "presets.not-available.title" : {
+    "presets.empty.not-available.title" : {
       "comment" : "The message displayed when presets were successfully downloaded from the server, but none were provided",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No presets available"
+          }
+        }
+      }
+    },
+    "presets.error.not-available.title" : {
+      "comment" : "The title of the message displayed when an error occurred in downloading preset location data",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error has occurred"
+          }
+        }
+      }
+    },
+    "presets.unavailable.refresh-button.title" : {
+      "comment" : "The title of the button the user presses to reattempt downloading preset data when there was previously an error fetching it or none was provided by the server",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Again"
           }
         }
       }

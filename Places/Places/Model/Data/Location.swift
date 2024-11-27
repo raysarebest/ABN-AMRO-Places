@@ -11,7 +11,7 @@ struct Location: Codable, Hashable {
     let name: String?
     let coordinate: CLLocationCoordinate2D
     
-    init(name: String?, coordinate: CLLocationCoordinate2D) throws {
+    init(name: String? = nil, coordinate: CLLocationCoordinate2D) throws(Error) {
         self.name = name
         
         guard CLLocationCoordinate2DIsValid(coordinate) else {

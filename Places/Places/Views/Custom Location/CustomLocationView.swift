@@ -14,20 +14,13 @@ struct CustomLocationView: View {
     @State private var selectedLatitude: CLLocationDegrees? = nil
     @State private var selectedLongitude: CLLocationDegrees? = nil
     
-    var selectedLocation: CLLocationCoordinate2D? {
-        get {
+    private var selectedLocation: Location? {
+        get throws {
             guard let latitude = selectedLatitude, let longitude = selectedLongitude else {
                 return nil
             }
             
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            
-            return if CLLocationCoordinate2DIsValid(coordinate) {
-                coordinate
-            }
-            else {
-                nil
-            }
+            return try Location(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
         }
     }
     
@@ -35,8 +28,8 @@ struct CustomLocationView: View {
         ZStack(alignment: .bottom) {
             MapReader { map in
                 Map(position: $camera) {
-                    if let location = selectedLocation {
-                        Marker("custom.selection-pin.title", coordinate: location)
+                    if let location = try? selectedLocation {
+                        Marker("custom.selection-pin.title", coordinate: location.coordinate)
                     }
                 }
                 .gesture(
@@ -52,8 +45,8 @@ struct CustomLocationView: View {
             
             VStack {
                 
-                if let location = selectedLocation {
-                    Link("custom.open-wiki-button.title", destination: wikiLink(for: location))
+                if let location = try? selectedLocation {
+                    Link("custom.open-wiki-button.title", destination: .wikipediaURL(at: location))
                         .buttonStyle(.borderedProminent)
                         .transition(.scale(1, anchor: .bottom))
                 }
@@ -71,10 +64,10 @@ struct CustomLocationView: View {
             .labeledContentStyle(.automatic)
             .background(.ultraThickMaterial)
         }
-        .onChange(of: selectedLocation) { _, newLocation in
+        .onChange(of: try? selectedLocation) { _, newLocation in
             if let location = newLocation {
                 withAnimation {
-                    camera = .camera(MapCamera(centerCoordinate: location, distance: 10_000))
+                    camera = .camera(MapCamera(centerCoordinate: location.coordinate, distance: 10_000))
                 }
             }
         }
@@ -90,19 +83,6 @@ struct CustomLocationView: View {
         get {
             return "custom.text-field.longitude.title"
         }
-    }
-    
-    private func wikiLink(for coordinate: CLLocationCoordinate2D) -> URL {
-        let wikiURLComponents = NSURLComponents()
-        wikiURLComponents.scheme = "wikipedia"
-        wikiURLComponents.host = "places"
-        
-        wikiURLComponents.queryItems = [
-            URLQueryItem(name: "latitude", value: String(coordinate.latitude)),
-            URLQueryItem(name: "longitude", value: String(coordinate.longitude))
-        ]
-        
-        return wikiURLComponents.url!
     }
 }
 
