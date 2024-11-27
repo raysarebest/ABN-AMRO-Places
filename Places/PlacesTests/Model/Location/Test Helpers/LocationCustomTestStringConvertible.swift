@@ -11,7 +11,7 @@ import Testing
 extension Location: @retroactive CustomTestStringConvertible {
     public var testDescription: String {
         get {
-            return name ?? coordinate.testDescription
+            return name ?? "Anonymous (\(coordinate.testDescription))"
         }
     }
 }

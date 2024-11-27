@@ -26,14 +26,14 @@ class DataLoader {
         }
         
         guard (200..<300).contains(httpResponse.statusCode) else {
-            throw Error.serverError
+            throw Error.unsuccessfulStatusCode(status: httpResponse.statusCode)
         }
         
         return try decoder.decode(LocationsResponse.self, from: data).locations
     }
     
-    enum Error: Swift.Error {
+    enum Error: Swift.Error, Equatable {
         case unexpectedProtocol
-        case serverError
+        case unsuccessfulStatusCode(status: Int)
     }
 }

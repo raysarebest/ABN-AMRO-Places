@@ -8,19 +8,19 @@
  - [x] Modify the [Wikipedia app](https://github.com/wikimedia/wikipedia-ios) so that it can be called in a way so that, when started, it directly goes to the ‘Places’ tab and shows the location specified by the calling app (e.g. via coordinates), instead of the current location
 
 - [x] Create a simple test app with a list of locations
-    - [ ] Should fetch locations from [remote server](https://raw.githubusercontent.com/abnamrocoesd/assignment-ios/main/locations.json)
-    - [ ] Tapping on a location should call the Wikipedia app in this new way to
+    - [x] Should fetch locations from [remote server](https://raw.githubusercontent.com/abnamrocoesd/assignment-ios/main/locations.json)
+    - [x] Tapping on a location should call the Wikipedia app in this new way to
 demonstrate the functionality
-    - [ ] The user of the test app should be allowed to enter a custom location and open
+    - [x] The user of the test app should be allowed to enter a custom location and open
 the Wikipedia app there
 
 ### Additional Requirements:
 
-- [ ] Use SwiftUI for the "Places" app
+- [x] Use SwiftUI for the "Places" app
 - [x] Make a README
-- [ ] Unit tests
+- [x] Unit tests
 - [ ] Demonstrate knowlege of:
-    - [ ] Swift Concurrency
+    - [x] Swift Concurrency
     - [ ] Accessibility
 
 ## Implementation
