@@ -14,19 +14,11 @@
 			remoteGlobalIDString = 4CEC30802CF4DAB7002F9AE3;
 			remoteInfo = Places;
 		};
-		4CEC309D2CF4DABA002F9AE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CEC30792CF4DAB7002F9AE3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CEC30802CF4DAB7002F9AE3;
-			remoteInfo = Places;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4CEC30812CF4DAB7002F9AE3 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEC30922CF4DABA002F9AE3 /* PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CEC309C2CF4DABA002F9AE3 /* PlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,11 +30,6 @@
 		4CEC30952CF4DABA002F9AE3 /* PlacesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PlacesTests;
-			sourceTree = "<group>";
-		};
-		4CEC309F2CF4DABA002F9AE3 /* PlacesUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PlacesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CEC30992CF4DABA002F9AE3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +57,6 @@
 			children = (
 				4CEC30832CF4DAB7002F9AE3 /* Places */,
 				4CEC30952CF4DABA002F9AE3 /* PlacesTests */,
-				4CEC309F2CF4DABA002F9AE3 /* PlacesUITests */,
 				4CEC30822CF4DAB7002F9AE3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +66,6 @@
 			children = (
 				4CEC30812CF4DAB7002F9AE3 /* Places.app */,
 				4CEC30922CF4DABA002F9AE3 /* PlacesTests.xctest */,
-				4CEC309C2CF4DABA002F9AE3 /* PlacesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +118,6 @@
 			productReference = 4CEC30922CF4DABA002F9AE3 /* PlacesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4CEC309B2CF4DABA002F9AE3 /* PlacesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CEC30AC2CF4DABA002F9AE3 /* Build configuration list for PBXNativeTarget "PlacesUITests" */;
-			buildPhases = (
-				4CEC30982CF4DABA002F9AE3 /* Sources */,
-				4CEC30992CF4DABA002F9AE3 /* Frameworks */,
-				4CEC309A2CF4DABA002F9AE3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CEC309E2CF4DABA002F9AE3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				4CEC309F2CF4DABA002F9AE3 /* PlacesUITests */,
-			);
-			name = PlacesUITests;
-			packageProductDependencies = (
-			);
-			productName = PlacesUITests;
-			productReference = 4CEC309C2CF4DABA002F9AE3 /* PlacesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +132,6 @@
 						CreatedOnToolsVersion = 16.1;
 					};
 					4CEC30912CF4DABA002F9AE3 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 4CEC30802CF4DAB7002F9AE3;
-					};
-					4CEC309B2CF4DABA002F9AE3 = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = 4CEC30802CF4DAB7002F9AE3;
 					};
@@ -202,7 +153,6 @@
 			targets = (
 				4CEC30802CF4DAB7002F9AE3 /* Places */,
 				4CEC30912CF4DABA002F9AE3 /* PlacesTests */,
-				4CEC309B2CF4DABA002F9AE3 /* PlacesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +166,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4CEC30902CF4DABA002F9AE3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CEC309A2CF4DABA002F9AE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CEC30982CF4DABA002F9AE3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +196,6 @@
 			isa = PBXTargetDependency;
 			target = 4CEC30802CF4DAB7002F9AE3 /* Places */;
 			targetProxy = 4CEC30932CF4DABA002F9AE3 /* PBXContainerItemProxy */;
-		};
-		4CEC309E2CF4DABA002F9AE3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CEC30802CF4DAB7002F9AE3 /* Places */;
-			targetProxy = 4CEC309D2CF4DABA002F9AE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,48 +436,6 @@
 			};
 			name = Release;
 		};
-		4CEC30AD2CF4DABA002F9AE3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.hulet.PlacesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Places;
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Debug;
-		};
-		4CEC30AE2CF4DABA002F9AE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.hulet.PlacesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = Places;
-				XROS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,15 +462,6 @@
 			buildConfigurations = (
 				4CEC30AA2CF4DABA002F9AE3 /* Debug */,
 				4CEC30AB2CF4DABA002F9AE3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CEC30AC2CF4DABA002F9AE3 /* Build configuration list for PBXNativeTarget "PlacesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CEC30AD2CF4DABA002F9AE3 /* Debug */,
-				4CEC30AE2CF4DABA002F9AE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

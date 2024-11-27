@@ -21,6 +21,7 @@ struct CoordinatePartEditor: View {
         LabeledContent(title) {
             TextField(title, value: $coordinatePart.animation(), format: .number)
         }
+        .fixedSize(horizontal: false, vertical: true)
         .accessibilityAddTraits(.isSearchField)
         .accessibilityAdjustableAction { direction in
             
